@@ -65,7 +65,7 @@
 
                 adjust_layer {
                         bindings = <
-   &bootloader  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &studio_unlock  &trans  &bootloader
+   &bootloader  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &bootloader
    &trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
    &trans       &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
                                 &trans  &trans  &trans      &trans  &trans  &trans
