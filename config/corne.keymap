@@ -17,8 +17,7 @@
 #define RAISE  2
 #define ADJUST 3
 
-&lt { quick_tap_ms = <220>; };
-&mt { quick-tap-ms = <200>; };
+
 
 &msc_input_listener { input-processors = <&zip_temp_layer 2 2000>; };
 
