@@ -388,7 +388,7 @@
         };
 
         macOs {
-            bindings = <&tog 3>;
+            bindings = <&tog 1>;
             key-positions = <12 17>;
         };
 
