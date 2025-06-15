@@ -369,36 +369,36 @@
         dota_shift {
             bindings = <&kp LEFT_SHIFT>;
             key-positions = <28 36>;
-            layers = <7>;
+            layers = <8>;
         };
 
         dota_toggle {
-            bindings = <&tog 1>;
+            bindings = <&tog 2>;
             key-positions = <5 25>;
         };
 
         left {
-            bindings = <&tog 8>;
+            bindings = <&tog 9>;
             key-positions = <10 6>;
         };
 
         shooters_toogle {
-            bindings = <&tog 3>;
+            bindings = <&tog 4>;
             key-positions = <0 5>;
         };
 
-        carbon {
-            bindings = <&tog 2>;
+        macOs {
+            bindings = <&tog 3>;
             key-positions = <12 17>;
         };
 
         toBase {
-            bindings = <&mo 4>;
+            bindings = <&mo 5>;
             key-positions = <37 38>;
         };
 
         func {
-            bindings = <&mo 5>;
+            bindings = <&mo 6>;
             key-positions = <36 37>;
         };
 
@@ -418,7 +418,7 @@
         base_layer {
             // ┌────────────────────────────────────────────┐
 
-            display-name = "BASE";
+            display-name = "Base";
 
             // └────────────────────────────────────────────┘
             /*
@@ -437,7 +437,17 @@
 &kp RBKT   &kp Q           &kp W           &kp E        &kp R             &kp T    &kp Y  &kp U              &kp I        &kp O            &kp P                    &kp LEFT_BRACKET
 &kp GRAVE  &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G    &kp H  &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RIGHT_WIN SEMICOLON  &kp SQT
 &kp ESC    &kp Z           &kp X           &kp C        &kp V             &kp B    &kp N  &kp M              &kp COMMA    &kp DOT          &kp FSLH                 &kp BSLH
-                                           &mo 9        &mo 4             &mo 5    &mo 8  &mo 7              &mo 6
+                                           &mo 10       &mo 5             &mo 6    &mo 9  &mo 8              &mo 7
+            >;
+        };
+
+        MacOS {
+            display-name = "BaseMac";
+            bindings = <
+&kp RBKT   &kp Q        &kp W           &kp E            &kp R             &kp T    &kp Y  &kp U              &kp I        &kp O            &kp P                &kp LEFT_BRACKET
+&kp GRAVE  &mt LCTRL A  &mt LEFT_ALT S  &mt LEFT_META D  &mt LEFT_SHIFT F  &kp G    &kp H  &mt RIGHT_SHIFT J  &mt RMETA K  &mt RIGHT_ALT L  &mt RCTRL SEMICOLON  &kp SQT
+&kp ESC    &kp Z        &kp X           &kp C            &kp V             &kp B    &kp N  &kp M              &kp COMMA    &kp DOT          &kp FSLH             &kp BSLH
+                                        &mo 10           &mo 5             &mo 6    &mo 9  &mo 8              &mo 7
             >;
         };
 
@@ -468,13 +478,11 @@
 &kp TAB    &kp Q  &kp W  &kp E     &kp R      &kp T      &kp Y  &kp U  &kp I      &kp O    &kp P     &kp ESC
 &kp LSHFT  &kp A  &kp S  &kp D     &kp F      &kp G      &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp APOS
 &kp LCTRL  &kp Z  &kp X  &kp C     &kp V      &kp B      &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp GRAVE
-                         &kp LALT  &kp SPACE  &kp RET    &mo 8  &mo 7  &mo 9
+                         &kp LALT  &kp SPACE  &kp RET    &mo 9  &mo 8  &mo 10
             >;
 
             display-name = "shooters";
         };
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         num_layer {
             // ┌────────────────────────────────────────────┐
@@ -502,8 +510,6 @@
             >;
         };
 
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄		
-
         media {
             // ┌────────────────────────────────────────────┐
 
@@ -529,8 +535,6 @@
                       &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &none      &kp K_MUTE  &kp C_VOLUME_UP  &kp C_VOLUME_DOWN
             >;
         };
-
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         adjust_layer {
             // ┌────────────────────────────────────────────┐
