@@ -503,10 +503,10 @@
 */
 
             bindings = <
-&kp LCTRL  &kp RCTRL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ESCAPE       &kp PLUS         &kp KP_NUMBER_9  &kp KP_N8        &kp KP_N7        &kp KP_NUMLOCK  &kp STAR
-&kp LSHFT  &kp RSHFT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0     &kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_N5        &kp KP_NUMBER_6  &kp KP_COMMA    &kp FSLH
-&kp LALT   &kp RALT   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp LG(SPACE)    &kp MINUS        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DOT      &kp RET
-                                    &kp TAB       &none         &trans           &kp COMMA        &kp DOT          &kp FSLH
+&kp LCTRL  &kp RCTRL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ESCAPE                &kp PLUS         &kp KP_NUMBER_9  &kp KP_N8        &kp KP_N7        &kp KP_NUMLOCK  &kp STAR
+&kp LSHFT  &kp RSHFT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0              &kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_N5        &kp KP_NUMBER_6  &kp KP_COMMA    &kp FSLH
+&kp LALT   &kp RALT   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &mt LEFT_COMMAND SPACE    &kp MINUS        &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_DOT      &kp RET
+                                    &kp TAB       &none         &trans                    &kp COMMA        &kp DOT          &kp FSLH
             >;
         };
 
@@ -585,10 +585,10 @@
 
         mouse {
             bindings = <
-&trans  &msc SCRL_LEFT  &msc SCRL_RIGHT  &msc SCRL_DOWN  &msc SCRL_UP  &none     &trans  &trans          &mmv MOVE_UP    &trans           &none   &trans
-&trans  &none           &mkp MB3         &mkp MB2        &mkp MB1      &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &trans
-&trans  &trans          &prev_desk       &desk           &next_desk    &trans    &trans  &none           &none           &trans           &trans  &trans
-                                         &trans          &trans        &trans    &trans  &trans          &trans
+&trans  &msc MOVE_X(-5)  &msc MOVE_X(5)  &msc MOVE_Y(-5)  &msc MOVE_Y(5)  &none     &trans  &trans          &mmv MOVE_UP    &trans           &none   &trans
+&trans  &none            &mkp MB3        &mkp MB2         &mkp MB1        &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &trans
+&trans  &trans           &prev_desk      &desk            &next_desk      &trans    &trans  &none           &none           &trans           &trans  &trans
+                                         &trans           &trans          &trans    &trans  &trans          &trans
             >;
 
             display-name = "mouse";
