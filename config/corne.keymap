@@ -314,6 +314,18 @@
                 <&macro_release>,
                 <&kp LEFT_WIN &kp L>;
         };
+
+        scrnMac: scrnMac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp N5>,
+                <&macro_press>,
+                <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp N5>;
+
+            label = "SCRNMAC";
+        };
     };
 };
 
@@ -405,6 +417,11 @@
         esc {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
+        };
+
+        screenshotMac {
+            bindings = <&none>;
+            key-positions = <10 11>;
         };
     };
 };
