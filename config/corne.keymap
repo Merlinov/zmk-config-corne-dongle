@@ -420,7 +420,7 @@
         };
 
         screenshotMac {
-            bindings = <&none>;
+            bindings = <&scrnMac>;
             key-positions = <10 11>;
         };
     };
