@@ -602,68 +602,13 @@
 
         mouse {
             bindings = <
-&trans  &msc MOVE_X(-5)  &msc MOVE_X(5)  &msc MOVE_Y(-5)  &msc MOVE_Y(5)  &none     &trans  &trans          &mmv MOVE_UP    &trans           &none   &trans
-&trans  &none            &mkp MB3        &mkp MB2         &mkp MB1        &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &trans
-&trans  &trans           &prev_desk      &desk            &next_desk      &trans    &trans  &none           &none           &trans           &trans  &trans
-                                         &trans           &trans          &trans    &trans  &trans          &trans
+&trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none     &trans  &trans          &mmv MOVE_UP    &trans           &none   &trans
+&trans  &none           &mkp MB3        &mkp MB2      &mkp MB1         &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &trans
+&trans  &trans          &prev_desk      &desk         &next_desk       &trans    &trans  &none           &none           &trans           &trans  &trans
+                                        &trans        &trans           &trans    &trans  &trans          &trans
             >;
 
             display-name = "mouse";
-        };
-
-        machibuse_en_first {
-            bindings = <
-&bootloader  &none         &kp U               &kp F           &none               &none    &none  &none  &kp G  &kp Y  &none  &none
-&bt BT_CLR   &mt LSHIFT A  &mt LEFT_COMMAND R  &mt LEFT_ALT S  &mt LEFT_CONTROL T  &none    &none  &none  &none  &none  &none  &bt BT_SEL 0
-&bt BT_PRV   &kp P         &kp M               &kp C           &kp D               &none    &none  &kp H  &kp L  &kp W  &kp B  &bt BT_NXT
-                                               &kp BACKSPACE   &sl 12              &none    &none  &none  &none
-            >;
-
-            label = "mb_en_1";
-        };
-
-        machibuse_en_second {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-
-            label = "mb_en_2";
-        };
-
-        machibuse_ru_first {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-
-            label = "mb_ru_1";
-        };
-
-        machibuse_ru_second {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-
-            label = "mb_ru_2";
-        };
-
-        sys1 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
-
-            label = "sys1";
         };
     };
 };
