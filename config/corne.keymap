@@ -610,5 +610,60 @@
 
             display-name = "mouse";
         };
+
+        machibuse_en_first {
+            bindings = <
+&bootloader  &none         &kp U               &kp F           &none               &none    &none  &none  &kp G  &kp Y  &none  &none
+&bt BT_CLR   &mt LSHIFT A  &mt LEFT_COMMAND R  &mt LEFT_ALT S  &mt LEFT_CONTROL T  &none    &none  &none  &none  &none  &none  &bt BT_SEL 0
+&bt BT_PRV   &kp P         &kp M               &kp C           &kp D               &none    &none  &kp H  &kp L  &kp W  &kp B  &bt BT_NXT
+                                               &kp BACKSPACE   &sl 12              &none    &none  &none  &none
+            >;
+
+            label = "mb_en_1";
+        };
+
+        machibuse_en_second {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "mb_en_2";
+        };
+
+        machibuse_ru_first {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "mb_ru_1";
+        };
+
+        machibuse_ru_second {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "mb_ru_2";
+        };
+
+        sys1 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+
+            label = "sys1";
+        };
     };
 };
