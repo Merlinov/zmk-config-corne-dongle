@@ -12,5 +12,8 @@ manifest:
     - name: nice-view-gem #new entry
       remote: m165437 #new entry
       revision: main #new entry
+    - name: zmk-dongle-display
+      remote: englmaxi
+      revision: main
   self:
     path: config
