@@ -4,7 +4,8 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
-        zephyr,display = &oled;  // выбрали дисплей для DT_CHOSEN
+        zephyr,display = &oled;          // DT_CHOSEN для современных Zephyr
+        zephyr_display = &oled;          // на случай кода, ожидающего старое имя
     };
 
     mock_kscan: kscan_0 {
@@ -15,16 +16,14 @@
     };
 };
 
-/* pinctrl: задаём пины I2C0 = TWIM0: SDA=P0.20, SCL=P0.17 */
+/* pinctrl: I2C0 (TWIM0) SDA=P0.20, SCL=P0.17 */
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 20)>,
                     <NRF_PSEL(TWIM_SCL, 0, 17)>;
-            /* при необходимости можно включить внутренние подтяжки:
-             * bias-pull-up;
-             * но обычно на модуле OLED есть свои резисторы
-             */
+            // при отсутствии подтяжек на модуле можно добавить:
+            // bias-pull-up;
         };
     };
 
@@ -37,7 +36,7 @@
     };
 };
 
-/* Привязываем pinctrl к I2C0 и объявляем дисплей как дочерний узел шины */
+/* Шина I2C0 с привязкой pinctrl и дисплеем SH1106 */
 &i2c0 {
     compatible = "nordic,nrf-twim";
     status = "okay";
@@ -46,34 +45,6 @@
     pinctrl-names = "default", "sleep";
     clock-frequency = <I2C_BITRATE_STANDARD>; /* 100 кГц */
 
-    /* Вариант для SH1106: */
     oled: sh1106@3c {
         compatible = "sinowealth,sh1106";
-        reg = <0x3c>;            /* проверь адрес: часто 0x3C, иногда 0x3D */
-        width = <128>;           /* проверь реальное разрешение модуля */
-        height = <64>;           /* если у тебя 128x64, ставь 64 */
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;  /* для 64 точек по вертикали */
-        segment-remap;
-        com-invdir;
-        status = "okay";
-    };
-
-    /* Если модуль SSD1306 — используй этот вариант вместо SH1106:
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
-        width = <128>;
-        height = <64>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-        segment-remap;
-        com-invdir;
-        status = "okay";
-    };
-    */
-};
+        reg = <0x3c>;               /* проверь адрес
