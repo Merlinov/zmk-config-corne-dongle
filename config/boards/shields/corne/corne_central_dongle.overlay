@@ -1,62 +1,75 @@
 #include "corne.dtsi"
 
-/ {
-    chosen {
-        zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &default_transform;
-        zephyr,display = &oled;          // DT_CHOSEN для современных Zephyr
-        zephyr_display = &oled;          // на случай кода, ожидающего старое имя
-    };
 
-    mock_kscan: kscan_0 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
-    };
-};
 
-/* pinctrl: I2C0 (TWIM0) SDA=P0.20, SCL=P0.17 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 &pinctrl {
     i2c0_default: i2c0_default {
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 20)>,
                     <NRF_PSEL(TWIM_SCL, 0, 17)>;
-            // при отсутствии подтяжек на модуле можно добавить:
-            // bias-pull-up;
+
+
+
+
         };
     };
 
-    i2c0_sleep: i2c0_sleep {
-        group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 20)>,
-                    <NRF_PSEL(TWIM_SCL, 0, 17)>;
-            low-power-enable;
-        };
+@@ -17,32 +37,43 @@
     };
 };
 
-/* Шина I2C0 с привязкой pinctrl и дисплеем SH1106 */
+
 &i2c0 {
     compatible = "nordic,nrf-twim";
     status = "okay";
     pinctrl-0 = <&i2c0_default>;
     pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_STANDARD>; /* 100 кГц */
+    clock-frequency = <I2C_BITRATE_STANDARD>;
+
 
     oled: sh1106@3c {
-        compatible = "sinowealth,sh1106";
-        reg = <0x3c>;               /* проверь адрес: 0x3C или 0x3D */
+        compatible = "sinowealth,sh1106";   // или "solomon,ssd1306fb"
+        reg = <0x3c>;                       // или <0x3d> по факту
         width = <128>;
-        height = <64>;              /* под реальный модуль */
-        display-offset = <0>;       /* required биндингом */
-        multiplex-ratio = <63>;     /* required биндингом, 63 для 64px */
+        height = <64>;                      // под реальный модуль
+        multiplex-ratio = <63>;
         segment-offset = <0>;
         page-offset = <0>;
-        prechargep = <0x22>;        /* required биндингом */
+        display-offset = <0>;
+
         segment-remap;
         com-invdir;
         status = "okay";
+    };
+};
+
+/ {
+    chosen {
+        zephyr,display = &oled; // чтобы DT_CHOSEN находился
+
+
+
+
+
+
+
+
+
+
     };
 }
