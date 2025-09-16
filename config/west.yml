@@ -3,9 +3,7 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: m165437 #new entry
-      url-base: https://github.com/M165437 
-    - name: williambonfim
-      url-base: https://github.com/williambonfim
+      url-base: https://github.com/M165437
   projects:    
   projects:
     - name: zmk
@@ -15,8 +13,5 @@ manifest:
     - name: nice-view-gem #new entry
       remote: m165437 #new entry
       revision: main #new entry
-    - name: zmk-dongle-display
-      remote: williambonfim
-      revision: main
   self:
     path: config
