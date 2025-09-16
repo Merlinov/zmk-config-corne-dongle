@@ -1,15 +1,11 @@
-/*
- * Copyright (c) 2020 Derek Schmell
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include "corne.dtsi"
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
+        zephyr,display = &oled;
+        zephyr_display = &oled;
     };
 
     mock_kscan: kscan_0 {
@@ -17,5 +13,24 @@
         columns = <0>;
         rows = <0>;
         events = <0>;
+    };
+};
+
+&i2c0 {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <64>;
+        display-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        prechargep = <0x22>;
+        segment-remap;
+        com-invdir;
+        status = "okay";
     };
 };
