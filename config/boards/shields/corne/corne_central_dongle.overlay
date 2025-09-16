@@ -47,4 +47,16 @@
 
     oled: sh1106@3c {
         compatible = "sinowealth,sh1106";
-        reg = <0x3c>;               /* проверь адрес
+        reg = <0x3c>;               /* проверь адрес: 0x3C или 0x3D */
+        width = <128>;
+        height = <64>;              /* под реальный модуль */
+        display-offset = <0>;       /* required биндингом */
+        multiplex-ratio = <63>;     /* required биндингом, 63 для 64px */
+        segment-offset = <0>;
+        page-offset = <0>;
+        prechargep = <0x22>;        /* required биндингом */
+        segment-remap;
+        com-invdir;
+        status = "okay";
+    };
+}
