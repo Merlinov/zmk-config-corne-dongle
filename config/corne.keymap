@@ -603,7 +603,7 @@
         mouse {
             bindings = <
 &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none     &trans  &trans          &mmv MOVE_UP    &trans           &none   &trans
-&trans  &none           &mkp MB3        &mkp MB2      &mkp MB1         &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &trans
+&trans  &trans          &mkp MB3        &mkp MB2      &mkp MB1         &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none   &trans
 &trans  &trans          &prev_desk      &desk         &next_desk       &trans    &trans  &none           &none           &trans           &trans  &trans
                                         &trans        &trans           &trans    &trans  &trans          &trans
             >;
