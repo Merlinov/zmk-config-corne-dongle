@@ -1,15 +1,10 @@
-/*
- * Copyright (c) 2020 Derek Schmell
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include "corne.dtsi"
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
+        zephyr_display = &oled;
     };
 
     mock_kscan: kscan_0 {
@@ -20,29 +15,6 @@
     };
 };
 
-/*
- * Copyright (c) 2020 Derek Schmell
- *
- * SPDX-License-Identifier: MIT
- */
-
-#include "corne.dtsi"
-
-/ {
-    chosen {
-        zmk,kscan = &mock_kscan;
-        zmk,matrix-transform = &default_transform;
-    };
-
-    mock_kscan: kscan_0 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
-    };
-};
-
-// for this (i.e. just copy and paste) replace the 128x64 screen with the 128x128 sh1107 screen
 &pro_micro_i2c {
     status = "okay";
     oled: sh1106@3c {
@@ -58,8 +30,6 @@
         com-invdir;
         inversion-on;
         prechargep = <0x22>;
-        };
-};
-chosen {
-    zephyr_display = &ssd1306_display;
+        status = "okay";
+    };
 };
