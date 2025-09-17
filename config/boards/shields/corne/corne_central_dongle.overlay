@@ -4,8 +4,10 @@
     chosen {
         zmk,kscan = &mock_kscan;
         zmk,matrix-transform = &default_transform;
-        zephyr,display = &oled;
-        zephyr_display = &oled;
+
+        // Убраны строчки с дисплеем
+        // zephyr,display = &oled;
+        // zephyr_display = &oled;
     };
 
     mock_kscan: kscan_0 {
@@ -14,23 +16,29 @@
         rows = <0>;
         events = <0>;
     };
+
+    // Отключение светодиода
+    led0: led_0 {
+        status = "disabled";
+    };
 };
 
 &i2c0 {
     status = "okay";
 
-    oled: sh1106@3c {
-        compatible = "sinowealth,sh1106";
-        reg = <0x3c>;                    // Адрес I2C (0x3C или 0x3D, проверьте свой модуль)
-        width = <128>;
-        height = <64>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;
-        segment-offset = <2>;            // Для SH1106 часто нужен небольшой сдвиг сегментов
-        page-offset = <0>;
-        prechargep = <0x22>;             // Обычно 0x22 для SH1106, но можно экспериментировать
-        segment-remap;
-        com-invdir;
-        status = "okay";
-    };
+    // Удалён узел oled с дисплеем
+    // oled: sh1106@3c {
+    //     compatible = "sinowealth,sh1106";
+    //     reg = <0x3c>;
+    //     width = <128>;
+    //     height = <64>;
+    //     display-offset = <0>;
+    //     multiplex-ratio = <63>;
+    //     segment-offset = <2>;
+    //     page-offset = <0>;
+    //     prechargep = <0x22>;
+    //     segment-remap;
+    //     com-invdir;
+    //     status = "okay";
+    // };
 };
