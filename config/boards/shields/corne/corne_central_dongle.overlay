@@ -29,7 +29,6 @@
         segment-offset = <0>;
         page-offset = <0>;
         prechargep = <0xF1>;  // Альтернатива 0x22 для лучшей яркости [236]
-        contrast = <255>;  // Максимум для теста
         vcomh = <0x40>;  // Уровень VCOMH, часто помогает с шумом [240]
         segment-remap;
         com-invdir;
