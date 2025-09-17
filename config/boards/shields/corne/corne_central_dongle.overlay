@@ -19,18 +19,21 @@
 &i2c0 {
     status = "okay";
 
-    oled: ssd1315@3c {
-        compatible = "solomon,ssd1306fb";  // часто используется такой compatible
-        reg = <0x3c>;
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";  // или попробуй "sinowealth,sh1106" для теста
+        reg = <0x3c>;  // 0x3C или 0x3D, в зависимости от модуля
         width = <128>;
         height = <64>;
         display-offset = <0>;
-        multiplex-ratio = <64>;       // иногда для ss1315 нужен 64
+        multiplex-ratio = <64>;  // Ключевой: 64 вместо 63 для SSD1315 [236][240]
         segment-offset = <0>;
         page-offset = <0>;
-        prechargep = <0x22>;
+        prechargep = <0xF1>;  // Альтернатива 0x22 для лучшей яркости [236]
+        contrast = <255>;  // Максимум для теста
+        vcomh = <0x40>;  // Уровень VCOMH, часто помогает с шумом [240]
         segment-remap;
         com-invdir;
         status = "okay";
     };
 };
+
