@@ -19,13 +19,13 @@
 &i2c0 {
     status = "okay";
 
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;    // если не работает — попробуй 0x3d
+    oled: ssd1315@3c {
+        compatible = "solomon,ssd1306fb";  // часто используется такой compatible
+        reg = <0x3c>;
         width = <128>;
         height = <64>;
         display-offset = <0>;
-        multiplex-ratio = <63>;
+        multiplex-ratio = <64>;       // иногда для ss1315 нужен 64
         segment-offset = <0>;
         page-offset = <0>;
         prechargep = <0x22>;
