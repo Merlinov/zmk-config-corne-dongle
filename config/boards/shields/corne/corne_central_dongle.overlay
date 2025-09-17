@@ -19,20 +19,18 @@
 &i2c0 {
     status = "okay";
 
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";  // Используем драйвер SSD1306, который обычно совместим с SSD1315
-        reg = <0x3c>;                      // Адрес I2C (проверьте ваш модуль, бывает также 0x3d)
+    oled: sh1106@3c {
+        compatible = "sinowealth,sh1106";
+        reg = <0x3c>;                    // Адрес I2C (0x3C или 0x3D, проверьте свой модуль)
         width = <128>;
         height = <64>;
         display-offset = <0>;
-        multiplex-ratio = <64>;            // Важное отличие для SSD1315 — установить 64 вместо 63
-        segment-offset = <0>;
+        multiplex-ratio = <63>;
+        segment-offset = <2>;            // Для SH1106 часто нужен небольшой сдвиг сегментов
         page-offset = <0>;
-        prechargep = <0xF1>;               // Подходящее значение precharge, чаще работает лучше чем 0x22 для SSD1315
+        prechargep = <0x22>;             // Обычно 0x22 для SH1106, но можно экспериментировать
         segment-remap;
         com-invdir;
         status = "okay";
     };
 };
-
-
