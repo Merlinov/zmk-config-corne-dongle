@@ -6,8 +6,8 @@
         zmk,matrix-transform = &default_transform;
 
         // Убраны строчки с дисплеем
-       // zephyr,display = &oled;
-      //  zephyr_display = &oled;
+        zephyr,display = &oled;
+        zephyr_display = &oled;
     };
 
     mock_kscan: kscan_0 {
